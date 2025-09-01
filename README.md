@@ -8,7 +8,7 @@ Ushbu loyiha pomidorlarning **pishgan (ripe)** va **xom (unripe)** holatini aniq
 
 ```
 pomidor/
-│── kutubxonalar.py      # Asosiy Python kodi (EDA + dataset tayyorlash + YOLO config)
+│── model_tayyorlash.py      # Asosiy Python kodi (EDA + dataset tayyorlash + YOLO config)
 │── rasmlar/             # Dataset (Images/ va labels/)
 │   ├── Images/          # .jpeg rasmlar
 │   └── labels/          # YOLO formatdagi .txt annotatsiyalar

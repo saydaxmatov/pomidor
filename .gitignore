@@ -12,12 +12,12 @@ venv/
 .venv/
 
 # Dataset va ma'lumotlar
-rasmlar/
+# rasmlar/
 yolo_data/
 dataset.zip
-*.jpg
-*.jpeg
-*.png
+# *.jpg
+# *.jpeg
+# *.png
 
 # YOLO training outputs
 runs/
