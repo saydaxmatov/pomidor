@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.tmp
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Dataset va ma'lumotlar
+rasmlar/
+yolo_data/
+dataset.zip
+*.jpg
+*.jpeg
+*.png
+
+# YOLO training outputs
+runs/
+
+# IDE va OS fayllar
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter/Colab
+*.ipynb_checkpoints
+*.ipynb_out
