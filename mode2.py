@@ -50,7 +50,7 @@ def list_images(images_dir: str) -> List[str]:
 
 def label_path_for(image_path: str, labels_dir: str) -> str:
     """
-    Rasm fayliga mos keluvchi YOLO label fayl yo‘lini qaytaradi.
+    //ANCHOR - Rasm fayliga mos keluvchi YOLO label fayl yo‘lini qaytaradi.
     Args:
         image_path (str): Rasm faylining yo‘li.
         labels_dir (str): Label fayllari papkasi yo‘li.
@@ -62,7 +62,7 @@ def label_path_for(image_path: str, labels_dir: str) -> str:
 
 def load_pairs(images_dir: str, labels_dir: str) -> Tuple[List[str], List[str]]:
     """
-    Rasm va ularga mos label fayllar juftligini qaytaradi.
+    //ANCHOR -Rasm va ularga mos label fayllar juftligini qaytaradi.
     Args:
         images_dir (str): Rasm fayllari katalogi.
         labels_dir (str): Label fayllari katalogi.
@@ -80,7 +80,7 @@ def load_pairs(images_dir: str, labels_dir: str) -> Tuple[List[str], List[str]]:
 
 def read_yolo_label_lines(label_file: str) -> List[str]:
     """
-    YOLO formatidagi label faylini qatordan o'qib, bo'sh bo'lmagan satrlarni ro'yxatga oladi.
+    //ANCHOR -YOLO formatidagi label faylini qatordan o'qib, bo'sh bo'lmagan satrlarni ro'yxatga oladi.
     Args:
         label_file (str): Label fayli yo‘li.
     Returns:
@@ -95,7 +95,7 @@ def read_yolo_label_lines(label_file: str) -> List[str]:
 
 def parse_class_ids_from_lines(lines: List[str]) -> List[int]:
     """
-    YOLO label qatordagi sinf identifikatorlarini (class ID) ajratib oladi.
+    //ANCHOR -YOLO label qatordagi sinf identifikatorlarini (class ID) ajratib oladi.
     Args:
         lines (List[str]): Label fayl satrlari ro‘yxati.
     Returns:
@@ -115,7 +115,7 @@ def parse_class_ids_from_lines(lines: List[str]) -> List[int]:
 
 def calc_average_size(images: List[str]) -> Tuple[Optional[float], Optional[float]]:
     """
-    Rasm fayllarining o‘rtacha eni va bo‘yi (pixels) ni hisoblaydi.
+    //ANCHOR -Rasm fayllarining o‘rtacha eni va bo‘yi (pixels) ni hisoblaydi.
     Args:
         images (List[str]): Rasm fayllari ro‘yxati.
     Returns:
@@ -140,7 +140,7 @@ def calc_average_size(images: List[str]) -> Tuple[Optional[float], Optional[floa
 
 def visualize_samples(images: List[str], num_samples: int = 5, show: bool = True):
     """
-    Tasodifiy rasm namunalarini ko‘rsatadi.
+    //ANCHOR -Tasodifiy rasm namunalarini ko‘rsatadi.
     Args:
         images (List[str]): Rasm fayllari ro‘yxati.
         num_samples (int): Ko‘rsatiladigan rasm soni (default 5).
@@ -171,7 +171,7 @@ def visualize_samples(images: List[str], num_samples: int = 5, show: bool = True
 
 def plot_average_size(avg_w: float, avg_h: float, show: bool = True):
     """
-    Rasm o‘lchamlarining o‘rtacha eni va bo‘yi ustunli grafikini chizadi.
+    //ANCHOR -Rasm o‘lchamlarining o‘rtacha eni va bo‘yi ustunli grafikini chizadi.
     Args:
         avg_w (float): O‘rtacha kenglik.
         avg_h (float): O‘rtacha balandlik.
@@ -191,7 +191,7 @@ def plot_average_size(avg_w: float, avg_h: float, show: bool = True):
 
 def plot_class_distribution(label_paths: List[str], show: bool = True) -> Dict[str, int]:
     """
-    YOLO label fayllardagi sinf (class) taqsimotini hisoblab, bar grafik chizadi.
+    //ANCHOR -YOLO label fayllardagi sinf (class) taqsimotini hisoblab, bar grafik chizadi.
     Args:
         label_paths (List[str]): Label fayllari yo‘llari ro‘yxati.
         show (bool): Grafikni ko‘rsatish flagi (default True).
@@ -221,7 +221,7 @@ def plot_class_distribution(label_paths: List[str], show: bool = True) -> Dict[s
 
 def _read_image_cv(p: str) -> np.ndarray:
     """
-    Rasmni xavfsiz o‘qish funksiyasi.
+    //ANCHOR -Rasmni xavfsiz o‘qish funksiyasi.
     Xatolik bo‘lsa → bo‘sh numpy array qaytaradi.
     Asosan gistogramma uchun rasm yuklashda qo‘llanadi.
     Args:
@@ -236,7 +236,7 @@ def process_images_in_batches(
     image_paths: List[str], max_images: int = 50, batch_size: int = 10
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
     """
-    Rasm fayllarini batch (to‘plam) bo‘lib yuklash va ularning RGB kanallarini yig‘ish.
+    //ANCHOR -Rasm fayllarini batch (to‘plam) bo‘lib yuklash va ularning RGB kanallarini yig‘ish.
     Args:
         image_paths (List[str]): Rasm fayllari yo‘llari ro‘yxati.
         max_images (int, default=50): Eng ko‘p qayta ishlanadigan rasm soni.
@@ -277,7 +277,7 @@ def plot_rgb_histogram(
     show: bool = True,
 ):
     """
-    Berilgan rasm to‘plamidagi RGB kanallarining gistogrammasini chizadi.
+    //ANCHOR -Berilgan rasm to‘plamidagi RGB kanallarining gistogrammasini chizadi.
     Args:
         image_paths (List[str]): Rasm fayllari ro‘yxati.
         title_prefix (str): Grafik sarlavhasining old qismi.
@@ -309,7 +309,7 @@ def split_train_test(
     seed: int = 42,
 ) -> Tuple[List[str], List[str], List[str], List[str]]:
     """
-    Rasmlar va label fayllarni train/test to‘plamlarga bo‘lish.
+    //ANCHOR -Rasmlar va label fayllarni train/test to‘plamlarga bo‘lish.
     Args:
         image_paths (List[str]): Rasm fayllari ro‘yxati.
         label_paths (List[str]): Label fayllari ro‘yxati.
@@ -326,7 +326,7 @@ def split_train_test(
 
 def safe_copy(files: List[str], dst_dir: str):
     """
-    Fayllarni xavfsiz ko'chirish, xato bo‘lsa ogohlantirish chiqaradi.
+    //ANCHOR -Fayllarni xavfsiz ko'chirish, xato bo‘lsa ogohlantirish chiqaradi.
     Args:
         files (List[str]): Ko‘chiriladigan fayllar ro‘yxati.
         dst_dir (str): Manzil papka.
@@ -345,7 +345,7 @@ def write_dataset_yaml(
     class_names: List[str],
 ):
     """
-    YOLO uchun dataset.yaml faylini yaratadi.
+    //ANCHOR -YOLO uchun dataset.yaml faylini yaratadi.
     Args:
         yaml_path (str): Saqlanish joyi.
         train_images_dir (str): Train rasm papkasi.
@@ -367,7 +367,7 @@ def classify_images_by_presence(
     image_paths: List[str], label_paths: List[str]
 ) -> Tuple[List[str], List[str]]:
     """
-    Rasm va label fayllar bo‘yicha «ripe» va «unripe» sinflariga tasniflaydi.
+    //ANCHOR -Rasm va label fayllar bo‘yicha «ripe» va «unripe» sinflariga tasniflaydi.
     Args:
         image_paths (List[str]): Rasm fayllari ro‘yxati.
         label_paths (List[str]): YOLO label fayllari ro‘yxati.
